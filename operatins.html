@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+    <h1>Arithimatic operations</h1>
+    <input type="number" id="num1" placeholder="enter First number">
+    <input type="number" id="num2" placeholder="enter second number">
+
+    <button onclick="add()">add</button>
+    <button onclick="subtract()">Subtract</button>
+    <button onclick="multiply()">multiply</button>
+    <button onclick="divide()">divide</button>
+
+    <h2>Result: <span id="result">0</span></h2>
+    </div>
+
+    <script>
+        function getInputValues() {
+            var num1 = parseFloat(document.getElementById('num1'))
+            var num2 = parseFloat(document.getElementById('num2'))
+            return [num1,num];
+        }
+
+        function add() {
+            var values =getInputValues();
+            var result = values[0]+[1];
+            document.getElementById('result').innerText =result; 
+        }
+        function subtract() {
+            var values =getInputValues();
+            var result = values[0]-[1];
+            document.getElementById('result').innerText =result;
+        }
+        function multiply() {
+            var values =getInputValues();
+            var result = values[0]*[1];
+            document.getElementById('result').innerText =result;
+        }
+        function Divide() {
+            var values =getInputValues();
+            if (values[1] !== 0){
+            var result = values[0]/[1];
+            document.getElementById('result').innerText =result;
+        } else {
+            document.getElementById('result').innerText="cannot divide by zero";
+           
+        }
+    }
+
+    </script>
+</body>
+</html>

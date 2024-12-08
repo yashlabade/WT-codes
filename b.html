@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arithmetic Operations</title>
+    <style>
+        .container {
+            text-align: center;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        }
+        
+        input,
+        button {
+            padding: 10px;
+            margin: 5px;
+            width: 180px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Arithmetic Operations</h1>
+        <input type="number" id="num1" placeholder="First number">
+        <input type="number" id="num2" placeholder="Second number">
+
+        <button onclick="add()">Add</button>
+        <button onclick="subtract()">Subtract</button>
+        <button onclick="multiply()">Multiply</button>
+        <button onclick="divide()">Divide</button>
+
+        <h2>Result: <span id="result">0</span></h2>
+    </div>
+
+    <script>
+        function getInputValues() {
+            var num1 = parseFloat(document.getElementById('num1').value);
+            var num2 = parseFloat(document.getElementById('num2').value);
+            return [num1, num2];
+        }
+
+        function add() {
+            var values = getInputValues();
+            var result = values[0] + values[1];
+            document.getElementById('result').innerText = result;
+        }
+
+        function subtract() {
+            var values = getInputValues();
+            var result = values[0] - values[1];
+            document.getElementById('result').innerText = result;
+        }
+
+        function multiply() {
+            var values = getInputValues();
+            var result = values[0] * values[1];
+            document.getElementById('result').innerText = result;
+        }
+
+        function divide() {
+            var values = getInputValues();
+            if (values[1] !== 0) {
+                var result = values[0] / values[1];
+                document.getElementById('result').innerText = result;
+            } else {
+                document.getElementById('result').innerText = "Cannot divide by zero";
+            }
+        }
+    </script>
+</body>
+
+</html>
